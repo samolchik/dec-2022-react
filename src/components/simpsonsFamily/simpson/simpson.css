@@ -1,0 +1,33 @@
+
+.simpsons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: start;
+    justify-content: center;
+    gap: 30px;
+
+}
+
+.simpson-img {
+    width: 60px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+.simpson {
+    padding: 10px;
+    max-width: 230px;
+    height: 470px;
+    background-color: aliceblue;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+  align-items: center;
+
+}
+
+.simpson-info {
+    font-size: 12px;
+    text-align: justify;
+}
