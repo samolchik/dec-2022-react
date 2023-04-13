@@ -10,8 +10,12 @@
   background-color: silver;
 }
 
-.simpsons-family,
-.rickandmorty {
+.page {
+  position: relative;
 text-align: center;
   margin-bottom: 30px;
+}
+
+h2 {
+  text-align: center;
 }

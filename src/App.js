@@ -1,26 +1,28 @@
-import logo from './logo.svg';
-import Simpsons from './components/simpsonsFamily/simpsons/Simpsons';
-import Persons from './components/rickandmorty/persons/Persons';
-
-import {SIMPSONS} from './mock/mock.simpsons';
-import {RICKANDMORTY} from './mock/mock.rick';
-
+import Posts from './components/posts/posts/Posts';
 import './App.css';
 import '../src/assets/normalise.css'
+import Users from "./components/users/users/Users";
+import Launches from "./components/launches/launches/Launches";
+import {RxRocket} from "react-icons/rx";
 
 function App() {
+
+
+
     return (
         <div className='wrap'>
-            <div className='simpsons-family'>
-                <h2>SIMPSON FAMILY</h2>
-                <Simpsons key={SIMPSONS.id} simpsons={SIMPSONS}/>
+            <div className='page'>
+                <h2>USERS</h2>
+                <Posts/>
+                <Users/>
             </div>
-
-            <div className='rickandmorty'>
-                <h2>RICK AND MORTY</h2>
-                <Persons key={RICKANDMORTY.id} persons={RICKANDMORTY}/>
+            <br/>
+            <div className='launches-page'>
+                <div className={'rocket'}> <RxRocket/> 2006 - 2019 years </div>
+                <Launches/>
             </div>
         </div>
-    );
+    )
 }
+
 export default App;
