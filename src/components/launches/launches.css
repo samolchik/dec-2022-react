@@ -1,16 +1,18 @@
 .launches {
+    padding: 10px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: start;
     justify-content: space-around;
+    background-color: silver;
     gap: 10px;
 }
 
 .launch {
     padding: 5px;
-    width: 150px;
-    height: 200px;
+    width: 135px;
+    height: 150px;
     background-color: #fff;
     border-radius: 10px;
     display: flex;
@@ -26,6 +28,18 @@ h4 {
 }
 
 .rocket {
-    font-size: 50px;
+    font-size: 60px;
     text-align: center;
+    cursor: pointer;
+    color: red;
+}
+
+.rocket-text {
+    font-size: 30px;
+    color: #233352;
+}
+
+.launch-img {
+    width: 30px;
+    height: 30px;
 }

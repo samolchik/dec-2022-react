@@ -11,7 +11,7 @@ const User = ({user}) => {
         setUserPosts({...obj})
     }
 
-    const onClosePosts = (obj) => {
+    const onClosePosts = () => {
         setUserPosts(false)
     }
 
@@ -21,7 +21,6 @@ const User = ({user}) => {
             <i>id: {user.id}</i>
             <p>email: {user.email}</p>
             <p>phone: {user.phone}</p>
-            <p>website: {user.website}</p>
             <button className={'btn'} onClick={() => {
                 onOpenPosts(user)}}>About posts</button>
 

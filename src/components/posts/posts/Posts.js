@@ -1,15 +1,16 @@
 import React, {useEffect, useState} from 'react';
 import Post from "../post/Post";
 import '../posts.css'
+import axios from "axios";
 
 const Posts = ({userId}) => {
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
-        fetch(`https://jsonplaceholder.typicode.com/users/${userId}/posts`)
-            .then(value => value.json())
+        axios(`https://jsonplaceholder.typicode.com/users/${userId}/posts`)
+            .then(value => value.data)
             .then(posts => setPosts([...posts]))
-    }, [])
+    }, [userId])
 
     return (
         <ul className={'posts'}>

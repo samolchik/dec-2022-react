@@ -11,8 +11,8 @@
 
 .user {
     padding: 15px;
-    width: 400px;
-    max-height: 300px;
+    width: 270px;
+    height: 210px;
     background-color: aliceblue;
     border-radius: 10px;
     display: flex;
@@ -28,4 +28,9 @@ p {
 
 .btn {
     margin-top: 10px;
+}
+
+span {
+    font-size: 40px;
+    color: white;
 }

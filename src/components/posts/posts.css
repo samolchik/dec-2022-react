@@ -21,8 +21,8 @@
 
 .post {
     padding: 5px;
-    width: 300px;
-    max-height: 100px;
+    width: 340px;
+    height: 80px;
     background-color: #fff;
     border-radius: 10px;
     display: flex;
@@ -32,7 +32,7 @@
     box-sizing: border-box;
 }
 
-h4 {
+h5 {
     margin: 5px;
 }
 

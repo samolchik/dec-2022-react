@@ -5,8 +5,8 @@ const Post = ({post}) => {
 
     const [postDetails, setPostDetails] = useState(null);
 
-    const onOpen = (obj) => {
-        setPostDetails({...obj})
+    const onOpen = (post) => {
+        setPostDetails({...post})
     }
 
     const onClose = () => {
@@ -15,7 +15,7 @@ const Post = ({post}) => {
 
     return (
          <li className='post'>
-           <h4><i>id: {post.id}, title:</i>  {post.title} </h4>
+           <h5><i>id: {post.id}, title:</i>  {post.title} </h5>
              <button onClick={() => {
                  onOpen(post)
              }}>Datails</button>
