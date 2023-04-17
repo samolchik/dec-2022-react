@@ -1,26 +1,18 @@
-import Posts from './components/posts/posts/Posts';
 import './App.css';
-import '../src/assets/normalise.css'
-import Users from "./components/users/users/Users";
-import Launches from "./components/launches/launches/Launches";
-import {RxRocket} from "react-icons/rx";
+import '../src/assets/normalise.css';
+import UserForm from "./components/userForm/UserForm";
+import CommentForm from "./components/commentForm/CommentForm";
+import Cars from "./components/cars/Cars";
 
 function App() {
 
-
-
     return (
         <div className='wrap'>
-            <div className='page'>
-                <h2>USERS</h2>
-                <Posts/>
-                <Users/>
+            <div className={'container'}>
+                <UserForm/>
+                <CommentForm/>
             </div>
-            <br/>
-            <div className='launches-page'>
-                <div className={'rocket'}> <RxRocket/> 2006 - 2019 years </div>
-                <Launches/>
-            </div>
+            <Cars/>
         </div>
     )
 }
