@@ -12,8 +12,8 @@ interface IProps {
 const Car: FC<IProps> = ({car, setAllCars, setUpdateCar}) => {
     const {id, year, price, brand} = car
 
-    const deleteCar = (id: number,) => {
-        carService.delete(id);
+    const deleteCar = async (id: number,) => {
+        await carService.delete(id);
         setAllCars(prev => !prev);
     }
 
