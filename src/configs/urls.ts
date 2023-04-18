@@ -4,7 +4,15 @@ const urlsCars = {
     cars: '/cars'
 };
 
+const baseURLJPH = 'https://jsonplaceholder.typicode.com';
+const urlsJPH = {
+    users: '/users',
+    comments: '/comments'
+};
+
 export {
     baseURLCars,
-    urlsCars
+    baseURLJPH,
+    urlsCars,
+    urlsJPH
 };

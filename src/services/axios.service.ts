@@ -1,12 +1,16 @@
 import axios, {AxiosResponse} from "axios";
-import {baseURLCars} from "../configs/urls";
+import {baseURLCars, baseURLJPH} from "../configs/urls";
 
 type IRes<T> = Promise<AxiosResponse<T>>;
 
 const axiosServiceCar = axios.create({baseURL: baseURLCars});
 
+const axiosServiceUser = axios.create({baseURL: baseURLJPH});
+
+
 export {
-    axiosServiceCar
+    axiosServiceCar,
+    axiosServiceUser
 };
 
 export type {
