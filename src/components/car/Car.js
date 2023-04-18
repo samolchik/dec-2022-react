@@ -11,10 +11,8 @@ const Car = ({car, setUpdateCar, setAllCars}) => {
         year
     } = car;
 
-    const [deleteCar, setDeleteCar] = useState(null);
-
     const carDelete = (id) => {
-        setDeleteCar(carService.delete(id))
+        carService.delete(id);
         setAllCars(prev => !prev);
     }
 
