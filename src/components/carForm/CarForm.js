@@ -1,9 +1,8 @@
 import React, {useEffect} from 'react';
 import {useForm} from "react-hook-form";
-import {carService} from "../../services/car.service";
 import {joiResolver} from "@hookform/resolvers/joi";
+import {carService} from "../../services/car.service";
 import {carValidator} from "../../validators/car.validator";
-
 
 const CarForm = ({setAllCars, updateCar}) => {
 
@@ -26,21 +25,18 @@ const CarForm = ({setAllCars, updateCar}) => {
     const saveCar = async (car) => {
         const {data} = await carService.create(car);
         setAllCars(prev => !prev);
-        reset()
+        reset();
     }
 
-    const update = async (id, car) => {
-        const {dataUp} = await carService.updateById(updateCar.id, updateCar);
+    const update = async (car) => {
+        const {data} = await carService.updateById(updateCar.id, car);
         setAllCars(prev => !prev);
-        reset()
-
-        console.log('updatedUser',  dataUp);
+        reset();
     }
-
 
     return (
         <form className={'car-form'} onSubmit={handleSubmit(updateCar ? update : saveCar)}>
-            <h2>ADD or UPDATE CAR</h2>
+            <h2>CREATE or UPDATE CAR</h2>
             <input type={'text'} placeholder={'brand'} {...register('brand')}/>
             {errors.brand && <span className={'errors'}>{errors.brand.message}</span>}
 

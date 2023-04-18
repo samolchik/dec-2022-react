@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import '../cars/cars.css'
 import {carService} from "../../services/car.service";
 
-
 const Car = ({car, setUpdateCar, setAllCars}) => {
 
     const {

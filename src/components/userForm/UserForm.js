@@ -41,8 +41,7 @@ const UserForm = () => {
 
             <button className={'user-btn'} disabled={!isValid}>CREATE</button>
         </form>
-    )
-        ;
+    );
 };
 
 export default UserForm;

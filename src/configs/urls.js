@@ -5,7 +5,6 @@ const urls = {
 };
 
 const baseURLCars = 'http://owu.linkpc.net/carsAPI/v1';
-
 const urlsCars = {
     cars: '/cars'
 };
