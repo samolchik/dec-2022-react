@@ -1,25 +1,31 @@
-import React from 'react';
-import "./users.css";
+import React, {FC} from 'react';
 import {SubmitHandler, useForm} from "react-hook-form";
+
 import {IUser} from "../../interfaces/user.interface";
-import {userService} from "../../services/user.service";
+import {IUseState} from "../../types/useState.type";
 import {joiResolver} from "@hookform/resolvers/joi";
 import {userValidator} from "../../validators/user.validator";
+import {userService} from "../../services/user.service";
+import "./users.css";
 
+interface IProps {
+    setUsers: IUseState<IUser[]>
+}
 
-const UserForm = () => {
+const UserForm: FC<IProps> = ({setUsers}) => {
 
     const {
         register,
-    reset,
-    handleSubmit,
-    formState:{errors, isValid}
+        reset,
+        handleSubmit,
+        formState: {errors, isValid}
     } = useForm<IUser>({mode: "all", resolver: joiResolver(userValidator)});
 
 
     const saveUser: SubmitHandler<IUser> = async (user) => {
-       const {data}= await userService.create(user);
-       reset();
+        const {data} = await userService.create(user);
+        setUsers(prev => [...prev, data])
+        reset();
 
         console.log(data);
     };

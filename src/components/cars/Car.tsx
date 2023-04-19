@@ -2,11 +2,13 @@ import React, {Dispatch, FC, SetStateAction, useState} from 'react';
 import './cars.css';
 import {ICar} from "../../interfaces/car.interface";
 import {carService} from "../../services/car.service";
+import {IUseState} from "../../types/useState.type";
 
 interface IProps {
     car: ICar,
-    setAllCars: Dispatch<SetStateAction<boolean>>,
-    setUpdateCar: Dispatch<SetStateAction<object>>
+    setAllCars: IUseState<boolean>,
+    setUpdateCar: IUseState<ICar | null>
+
 }
 
 const Car: FC<IProps> = ({car, setAllCars, setUpdateCar}) => {

@@ -1,17 +1,20 @@
 import React, {Dispatch, FC, SetStateAction, useEffect} from 'react';
 import {SubmitHandler, useForm} from "react-hook-form";
+
+import {IUseState} from "../../types/useState.type";
 import {ICar} from "../../interfaces/car.interface";
-import {carService} from "../../services/car.service";
-import './cars.css';
-import {joiResolver} from "@hookform/resolvers/joi";
 import {carValidator} from "../../validators/car.validator";
+import {carService} from "../../services/car.service";
+import {joiResolver} from "@hookform/resolvers/joi";
+import './cars.css';
 
 interface IProps {
-    setAllCars: Dispatch<SetStateAction<boolean>>,
-    updateCar: ICar
+    setAllCars: IUseState<boolean>,
+    setUpdateCar: IUseState<ICar | null>,
+    updateCar: ICar | null
 }
 
-const CarForm: FC<IProps> = ({setAllCars, updateCar}) => {
+const CarForm: FC<IProps> = ({setAllCars, updateCar, setUpdateCar}) => {
     const {
         register,
         handleSubmit,
@@ -20,13 +23,23 @@ const CarForm: FC<IProps> = ({setAllCars, updateCar}) => {
         formState: {errors, isValid}
     } = useForm<ICar>({mode: "all", resolver: joiResolver(carValidator)});
 
-    useEffect(() => {
-        if (updateCar) {
-            setValue('brand', updateCar.brand, {shouldValidate: true});
-            setValue('price', updateCar.price, {shouldValidate: true});
-            setValue('year', updateCar.year, {shouldValidate: true});
+    // useEffect(() => {
+    //     if (updateCar) {
+    //         setValue('brand', updateCar.brand, {shouldValidate: true});
+    //         setValue('price', updateCar.price, {shouldValidate: true});
+    //         setValue('year', updateCar.year, {shouldValidate: true});
+    //     }
+    // }, [updateCar])
+
+    useEffect(()=>{
+        if(updateCar){
+            Object.entries(updateCar).forEach(([key, value]) => {
+                if (key != 'id') {
+                    setValue(key as keyof ICar, value, {shouldValidate: true})
+                }
+            })
         }
-    }, [updateCar])
+    }, [updateCar]);
 
     const saveCar: SubmitHandler<ICar> = async (car) => {
         const {data} = await carService.create(car);
@@ -36,10 +49,11 @@ const CarForm: FC<IProps> = ({setAllCars, updateCar}) => {
     };
 
     const update: SubmitHandler<ICar> = async (car) => {
-        const {data} = await carService.updateById(updateCar.id, car);
+        const {data} = await carService.updateById(updateCar!.id, car);
         setAllCars(prev => !prev);
         reset();
-    }
+        setUpdateCar(null);
+    };
 
     return (
         <form className={'car-form'} onSubmit={handleSubmit(updateCar ? update : saveCar)}>

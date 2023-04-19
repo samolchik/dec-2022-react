@@ -1,6 +1,7 @@
-import {axiosServiceCar, IRes} from "./axios.service";
+import {axiosServiceCar} from "./axios.service";
 import {urlsCars} from "../configs/urls";
 import {ICar} from "../interfaces/car.interface";
+import {IRes} from "../types/res.type";
 
 const carService = {
     getAll: (): IRes<ICar[]> => axiosServiceCar.get(urlsCars.cars),

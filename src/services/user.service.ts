@@ -1,6 +1,7 @@
-import {axiosServiceUser, IRes} from "./axios.service";
-import {urlsJPH} from "../configs/urls";
+import {axiosServiceUser} from "./axios.service";
 import {IUser} from "../interfaces/user.interface";
+import {IRes} from "../types/res.type";
+import {urlsJPH} from "../configs/urls";
 
 const userService = {
     getAll: (): IRes<IUser[]> => axiosServiceUser.get(urlsJPH.users),
