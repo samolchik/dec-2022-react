@@ -4,7 +4,7 @@ import {joiResolver} from "@hookform/resolvers/joi";
 import {carService} from "../../services/car.service";
 import {carValidator} from "../../validators/car.validator";
 
-const CarForm = ({setAllCars, updateCar}) => {
+const CarForm = ({setAllCars, updateCar, setUpdateCar}) => {
 
     const {
         register,
@@ -32,6 +32,7 @@ const CarForm = ({setAllCars, updateCar}) => {
         const {data} = await carService.updateById(updateCar.id, car);
         setAllCars(prev => !prev);
         reset();
+        setUpdateCar(null);
     }
 
     return (

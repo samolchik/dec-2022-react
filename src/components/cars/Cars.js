@@ -15,7 +15,7 @@ const Cars = () => {
 
     return (
         <>
-            <CarForm setAllCars={setAllCars} updateCar={updateCar}/>
+            <CarForm setAllCars={setAllCars} updateCar={updateCar} setUpdateCar={setUpdateCar}/>
             <hr/>
             <ul className='cars'>
                 {
