@@ -1,0 +1,19 @@
+.header {
+    display: flex;
+    justify-content: space-around;
+    padding: 30px;
+    background-color: #795548;
+}
+
+.header>button {
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: rgba(84, 77, 63, 0.42);
+    color: #d2c2a6;
+    cursor: pointer;
+}
+
+.header>button:hover {
+    background-color: rgba(227, 188, 115, 0.42);
+    color: white;
+}

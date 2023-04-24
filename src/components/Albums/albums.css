@@ -1,0 +1,22 @@
+.albums {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 10px;
+}
+
+.album {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 100px;
+    padding: 7px;
+    text-align: center;
+    background-color: #a98e783b;
+    border: 1px solid gray;
+    border-radius: 50%;
+}

@@ -1,0 +1,18 @@
+.posts {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    background-color: #a98e787d;
+}
+
+.post {
+    text-align: center;
+    padding: 15px;
+    width: 50%;
+    height:120px;
+    background-color: #fff;
+}
