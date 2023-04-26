@@ -3,11 +3,10 @@ const baseURL = 'https://jsonplaceholder.typicode.com';
 const posts = '/posts';
 const urls = {
     posts: {
-        getByid: (id) => `${posts}/${id}`
+        posts,
+        byId: (id) => `${posts}/${id}`
     },
-    albums: '/albums',
     comments: '/comments',
-    todos: '/todos'
 }
 
 

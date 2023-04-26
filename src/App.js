@@ -1,25 +1,22 @@
 import {Navigate, Route, Routes} from "react-router-dom";
 
-import AlbumsPage from "./pages/AlbumsPage/AlbumsPage";
 import CommentsPage from "./pages/CommentsPage/CommentsPage";
-import Layout from "./pages/Layout/Layout";
-import Post from "./components/Post/Post";
-import TodosPage from "./pages/TodosPage/TodosPage";
+import Layout from "../src/Layout/Layout";
+import PostsPage from "./pages/PostsPage/PostsPage";
 
 import './App.css';
 import '../src/assets/normalise.css'
+import AnimalsPage from "./pages/AnimalsPage/AnimalsPage";
 
 function App() {
     return (
         <div className="App">
             <Routes>
                 <Route path={'/'} element={<Layout/>}>
-                    <Route index element={<Navigate to={'todos'}/>}/>
-                    <Route path={'todos'} element={<TodosPage/>}/>
-                    <Route path={'albums'} element={<AlbumsPage/>}/>
-                    <Route path={'comments'} element={<CommentsPage/>}>
-                        <Route path={':postId'} element={<Post/>}/>
-                    </Route>
+                    <Route index element={<Navigate to={'posts'}/>}/>
+                    <Route path={'posts'} element={<PostsPage/>}/>
+                    <Route path={'comments'} element={<CommentsPage/>}/>
+                    <Route path={'animals'} element={<AnimalsPage/>}/>
                 </Route>
             </Routes>
         </div>

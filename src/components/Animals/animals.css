@@ -1,0 +1,12 @@
+.animals {
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn-del {
+    margin-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}

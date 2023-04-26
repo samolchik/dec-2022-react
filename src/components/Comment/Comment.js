@@ -1,19 +1,20 @@
-import React from 'react';
-import {useNavigate} from "react-router-dom";
+import React, {Component} from 'react';
 
-const Comment = ({comment}) => {
-    const {id, postId, name, email, body} = comment;
+class Comment extends Component {
+    render() {
+        const {id, postId, name, email, body} = this.props.comment;
 
-    const navigate = useNavigate();
+        return (
+            <div>
+                <h4>name: {name}</h4>
+                <p>id: {id}; postId: {postId}</p>
+                <p>body: {body}</p>
+                <address>email: {email}</address>
+                <hr/>
+            </div>
+        );
+    }
 
-    return (
-        <li>
-            <h4>name: {name}</h4>
-            <p>id: {id}; postId: {postId}; email: {email}</p>
-            <p>body: {body}</p>
-            <button onClick={() => navigate(`${postId}`)}>Post details</button>
-        </li>
-    );
-};
+}
 
 export default Comment;

@@ -1,24 +1,30 @@
-import React, {useEffect, useState} from 'react';
+import React, {Component} from 'react';
+
 import {commentService} from "../../services/comment.service";
 import Comment from "../Comment/Comment";
 
-const Comments = () => {
-    const [comments, setComments] = useState([]);
+class Comments extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            comments: []
+        }
+    }
 
-    useEffect(() => {
-        commentService.getAll().then(value => value.data).then(value => setComments(value))
-    }, []);
+    componentDidMount() {
+        commentService.getAll().then(value => value.data).then(value => this.setState({comments: value}))
+    }
 
-    return (
-
-        <div>
-            <ul>
+    render() {
+        return (
+            <div>
                 {
-                    comments.map(comment => (<Comment key={comment.id} comment={comment}/>))
+                    this.state.comments.map(comment => (<Comment key={comment.id} comment={comment}/>))
                 }
-            </ul>
-        </div>
-    );
-};
+
+            </div>
+        );
+    }
+}
 
 export default Comments;
