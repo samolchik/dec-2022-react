@@ -1,7 +1,7 @@
 import {Navigate, Route, Routes} from "react-router-dom";
 
 import CommentsPage from "./pages/CommentsPage/CommentsPage";
-import Layout from "../src/Layout/Layout";
+import Layout from "./layout/Layout";
 import PostsPage from "./pages/PostsPage/PostsPage";
 
 import './App.css';
