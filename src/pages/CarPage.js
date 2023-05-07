@@ -1,13 +1,20 @@
 import React from 'react';
+import {useSelector} from "react-redux";
 
-import {Cars} from "../components";
+import {CarForm, Cars} from "../components";
 
 const CarPage = () => {
+    const {loading, error} = useSelector(state => state.cars);
+
     return (
-        <div>
+        <div className={'cars-page'}>
+            <CarForm/>
+            {error && <h3>{JSON.stringify(error)}</h3>}
+            {loading && <h1>Loading...</h1>}
+            <hr/>
             <Cars/>
         </div>
-    );
+    )
 };
 
-export  {CarPage};
+export {CarPage};

@@ -9,8 +9,7 @@ const Car = ({car}) => {
     const dispatch = useDispatch();
 
     const deleteCar = async () => {
-       await carService.deleteById(id);
-       dispatch(carActions.changeTrigger())
+       await dispatch(carActions.deleteCar({id}))
     };
 
     return (
@@ -28,3 +27,4 @@ const Car = ({car}) => {
 };
 
 export {Car};
+
