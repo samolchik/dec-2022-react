@@ -1,0 +1,23 @@
+.cars {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.car {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 150px;
+    border: 1px solid gray;
+    border-radius: 5%;
+}
+
+.btns {
+    display: flex;
+    gap: 10px;
+}
