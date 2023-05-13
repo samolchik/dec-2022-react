@@ -1,10 +1,20 @@
 .Header {
+    padding: 20px;
     display: flex;
-  justify-content: center;
+    justify-content: space-between;
     align-items: center;
     height: 70px;
     background-color: #61dafb;
     color: #282c34;
     font-size: 30px;
     font-weight: bold;
+}
+
+.Header a {
+    text-decoration: none;
+    color: snow;
+    padding: 0 10px;
+}
+.Header a[class='active']{
+    color: blue;
 }
